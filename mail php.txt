@@ -1,0 +1,21 @@
+<?php
+
+if(!empty($_POST)){
+    $name = $_POST['nom'];
+    $mail = $_POST['mail'];
+    $objet = $_POST['objet'];
+    $msg = $_POST['message'];
+    $email_subject = "new msg";
+    $email_body = "Name: {$name} Email: {$mail} objet: {$objet} message: {$msg} ";
+    $to = "su75369@gmail.com";
+    $mail = mail($to,$email_subject,$email_body);
+    
+    if ($mail) {
+        echo "<script> alert('Mail Send.'); </script>";
+      }else {
+        echo "<script> alert('Mail Not Send.'); </script>";
+      }
+}
+
+
+?>
